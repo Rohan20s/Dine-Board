@@ -2,64 +2,94 @@ import "./login.module.css"
 
 const page = () => {
     return (
-        <section className="vh-100">
-            <div className="container py-5 h-100">
-                <div className="row d-flex align-items-center justify-content-center h-100">
-                    <div className="col-md-8 col-lg-7 col-xl-6">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                            className="img-fluid" alt="Phone image" />
+        <div className="auth-main">
+            <div className="auth-wrapper v3">
+                <div className="auth-form">
+                    <div className="auth-header">
+                        <a href="#"><img src="./logo-dark.svg" alt="img" /></a>
                     </div>
-                    <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                        <form>
-                            {/* <!-- Email input --> */}
-                            <div data-mdb-input-init className="form-outline mb-4">
-                                <input type="email" id="form1Example13" className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form1Example13">Email address</label>
+                    <div className="card my-5">
+                        <div className="card-body">
+                            <div className="d-flex justify-content-between align-items-end mb-4">
+                                <h3 className="mb-0"><b>Sign up</b></h3>
+                                <a href="#" className="link-primary">Already have an account?</a>
                             </div>
-
-                            {/* <!-- Password input --> */}
-                            <div data-mdb-input-init className="form-outline mb-4">
-                                <input type="password" id="form1Example23" className="form-control form-control-lg" />
-                                <label className="form-label" htmlFor="form1Example23">Password</label>
-                            </div>
-
-                            <div className="d-flex justify-content-around align-items-center mb-4">
-                                {/* <!-- Checkbox --> */}
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="form1Example3"  />
-                                    <label className="form-check-label" htmlFor="form1Example3"> Remember me </label>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group mb-3">
+                                        <label className="form-label">First Name*</label>
+                                        <input type="text" className="form-control" placeholder="First Name" />
+                                    </div>
                                 </div>
-                                <a href="#!">Forgot password?</a>
+                                <div className="col-md-6">
+                                    <div className="form-group mb-3">
+                                        <label className="form-label">Last Name</label>
+                                        <input type="text" className="form-control" placeholder="Last Name" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form-group mb-3">
+                                <label className="form-label">Company</label>
+                                <input type="text" className="form-control" placeholder="Company" />
+                            </div>
+                            <div className="form-group mb-3">
+                                <label className="form-label">Email Address*</label>
+                                <input type="email" className="form-control" placeholder="Email Address" />
+                            </div>
+                            <div className="form-group mb-3">
+                                <label className="form-label">Password</label>
+                                <input type="password" className="form-control" placeholder="Password" />
+                            </div>
+                            <p className="mt-4 text-sm text-muted">By Signing up, you agree to our <a href="#" className="text-primary"> Terms of Service </a> and <a href="#" className="text-primary"> Privacy Policy</a></p>
+                            <div className="d-grid mt-3">
+                                <button type="button" className="btn btn-primary">Create Account</button>
+                            </div>
+                            <div className="saprator mt-3">
+                                <span>Sign up with</span>
+                            </div>
+                            <div className="row">
+                                <div className="col-4">
+                                    <div className="d-grid">
+                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
+                                            <img src="../assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block"> Google</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="col-4">
+                                    <div className="d-grid">
+                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
+                                            <img src="../assets/images/authentication/twitter.svg" alt="img" /> <span className="d-none d-sm-inline-block"> Twitter</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="col-4">
+                                    <div className="d-grid">
+                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
+                                            <img src="../assets/images/authentication/facebook.svg" alt="img" /> <span className="d-none d-sm-inline-block"> Facebook</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
-                            {/* <!-- Submit button --> */}
-                            <button type="submit" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg btn-block">Sign in</button>
-
-                            <div className="divider d-flex align-items-center my-4">
-                                <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-                            </div>
-
-                            <a
-                                data-mdb-ripple-init
-                                className="btn btn-primary btn-lg btn-block"
-                                style={{ backgroundColor: "#3b5998" }}
-                                href="#!"
-                                role="button"
-                            >
-                                <i className="fab fa-facebook-f me-2"></i>
-                                Continue with Facebook
-                            </a>
-
-                            <a data-mdb-ripple-init className="btn btn-primary btn-lg btn-block" 
-                            style={{ backgroundColor: "#55acee"}} href="#!"
-                                role="button">
-                            <i className="fab fa-twitter me-2"></i>Continue with Twitter</a>
-
-                    </form>
+                        </div>
+                    </div>
+                    <div className="auth-footer row">
+                        {/* <!-- <div className=""> --> */}
+                        <div className="col my-1">
+                            <p className="m-0">Copyright © <a href="#">Codedthemes</a></p>
+                        </div>
+                        <div className="col-auto my-1">
+                            <ul className="list-inline footer-link mb-0">
+                                <li className="list-inline-item"><a href="#">Home</a></li>
+                                <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                <li className="list-inline-item"><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+                        {/* <!-- </div> --> */}
+                    </div>
                 </div>
             </div>
         </div>
-        </section >
     );
 }
 
