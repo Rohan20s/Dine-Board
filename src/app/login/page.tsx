@@ -1,12 +1,12 @@
 import "./login.module.css"
-
+import logo from '/assets/images/logo-dark.svg';
 const page = () => {
     return (
         <div className="auth-main">
             <div className="auth-wrapper v3">
                 <div className="auth-form">
                     <div className="auth-header">
-                        <a href="#"><img src="./logo-dark.svg" alt="img" /></a>
+                        <a href="#"><img src={logo} alt="img" /></a>
                     </div>
                     <div className="card my-5">
                         <div className="card-body">
@@ -15,7 +15,7 @@ const page = () => {
                                 <a href="#" className="link-primary">Already have an account?</a>
                             </div>
                             <div className="row">
-                                <div className="col-md-6">
+                         z       <div className="col-md-6">
                                     <div className="form-group mb-3">
                                         <label className="form-label">First Name*</label>
                                         <input type="text" className="form-control" placeholder="First Name" />
