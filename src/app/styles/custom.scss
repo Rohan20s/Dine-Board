@@ -1,0 +1,21 @@
+/* _custom.scss  – compiled together with Bootstrap’s Sass */
+.btn-brand {
+  background-color: #2a3aca;
+  color: #fff;
+  transition: background 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    background-color: #3d4bc98f;
+    transform: translateY(-2px);
+  }
+}
+.form-control {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Hover or focus state */
+.form-control:hover,
+.form-control:focus {
+  border-color: #2a3aca;                   /* purple border */
+  box-shadow: 0 0 0 .15rem rgba(100, 82, 179, 0.25); /* subtle glow */
+}

@@ -1,13 +1,15 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/custom.scss'
 
 const page = () => {
     return (
-        <div   className="bg-light">
-            <div style={{ width: "500px" }} className="auth-wrapper v3 auth-main container ">
+        <div   className="auth-main bg-light min-vh-100">
+            <div  className="auth-wrapper v3 auth-main container ">
                 <div className="auth-form">
                     <div className="auth-header py-2">
                         <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
                     </div>
-                    <div className="card my-5">
+                    <div style={{ maxWidth: '500px' }} className="card my-5 auth-wrapper v3 container  mx-auto w-100">
                         <div className="card-body">
                             <div className="d-flex justify-content-between align-items-end mb-4">
                                 <h3 className="mb-0"><b>Sign up</b></h3>
@@ -41,7 +43,7 @@ const page = () => {
                             </div>
                             <p className="mt-4 text-sm text-muted">By Signing up, you agree to our <a href="#" className="text-primary"> Terms of Service </a> and <a href="#" className="text-primary"> Privacy Policy</a></p>
                             <div className="d-grid mt-3">
-                                <button type="button" className="btn btn-primary">Create Account</button>
+                                <button type="button" className="btn btn-brand">Create Account</button>
                             </div>
                             <div className="saprator mt-3">
                                 <span>Sign up with</span>
