@@ -1,0 +1,156 @@
+.authMain {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.authForm {
+  background: var(--color-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2rem;
+  font-family: var(--font-family);
+}
+.authHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.cardWrapper {
+  margin: 0 auto;
+}
+.cardBody {
+  padding: 1.5rem;
+}
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+.title {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  font-family: var(--font-family);
+}
+.linkPrimary {
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.colMd6 {
+  flex: 1;
+}
+.formGroup {
+  margin-bottom: 1rem;
+}
+.formLabel {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+.formControl {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+.formCheck {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.formCheckInput {
+  margin-right: 0.5rem;
+}
+.formCheckLabel {
+  font-size: 0.95rem;
+}
+.termsText {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+.buttonRow {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.btnBrand {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: var(--font-family);
+}
+.btnBrand:hover {
+  background: var(--color-hover);
+}
+.saprator {
+  text-align: center;
+  margin: 1.5rem 0 1rem 0;
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+.socialRow {
+  display: flex;
+  justify-content: center;
+}
+.btnGoogle {
+  background: var(--color-surface);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+.googleText {
+  display: inline-block;
+  font-family: var(--font-family);
+}
+.authFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-divider);
+  padding-top: 1rem;
+}
+.footerCol {
+  flex: 1;
+}
+.footerColAuto {
+  flex: 0 0 auto;
+}
+.footerLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.footerText {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-family);
+} 

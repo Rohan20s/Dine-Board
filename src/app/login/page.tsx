@@ -1,57 +1,49 @@
 'use client';
 
-import '@/styles/components/button.scss';
-import '@/styles/components/form.scss';
-import login from '@/constant/login';
+import styles from '../login/login.module.css';
 import { useRouter } from 'next/navigation';
+import { loginTexts } from './login.constants';
 
-
-const page = () => {
-
+const LoginPage = () => {
     const router = useRouter();
     const handleLoginRedirect = () => {
         router.push('/register');
     };
 
     return (
-        <div className="auth-main bg-light min-vh-100">
-            <div  className=" container">
-                <div className="auth-form ">
-                    <div className="auth-header py-2">
+        <div className={styles.authMain}>
+            <div className={styles.container}>
+                <div className={styles.authForm}>
+                    <div className={styles.authHeader}>
                         <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
                     </div>
-                    <div style={{ maxWidth: '500px' }} className="card my-5 auth-wrapper v3 container  mx-auto w-100">
-                        <div className="card-body">
-                            <div className="d-flex justify-content-between align-items-end mb-4">
-                                <h3 className="mb-0"><b>{login.title}</b></h3>
-                                <a href="#" onClick={handleLoginRedirect} className="link-primary">{login.notHaveAccount}</a>
+                    <div className={styles.cardWrapper}>
+                        <div className={styles.cardBody}>
+                            <div className={styles.headerRow}>
+                                <h3 className={styles.title}><b>{loginTexts.title}</b></h3>
+                                <a href="#" onClick={handleLoginRedirect} className={styles.linkPrimary}>{loginTexts.notHaveAccount}</a>
                             </div>
-                            <div className="form-group mb-3">
-                                <label className="form-label">{login.email}</label>
-                                <input type="email" className="form-control" placeholder="Email Address" />
+                            <div className={styles.formGroup}>
+                                <label className={styles.formLabel}>{loginTexts.email}</label>
+                                <input type="email" className={styles.formControl} placeholder="Email Address" />
                             </div>
-                            <div className="form-group mb-3">
-                                <label className="form-label">{login.password}</label>
-                                <input type="password" className="form-control" placeholder="Password" />
+                            <div className={styles.formGroup}>
+                                <label className={styles.formLabel}>{loginTexts.password}</label>
+                                <input type="password" className={styles.formControl} placeholder="Password" />
                             </div>
-                            <div className="d-flex mt-1 justify-content-end">
-                                
-                                <h6 className="text-primary f-w-400">{login.forgotPassword}</h6>
+                            <div className={styles.forgotRow}>
+                                <h6 className={styles.forgotText}>{loginTexts.forgotPassword}</h6>
                             </div>
-                            <div className="d-grid mt-4">
-                                <button type="button" className="btn btn-brand">{login.login}</button>
+                            <div className={styles.buttonRow}>
+                                <button type="button" className={styles.btnBrand}>{loginTexts.login}</button>
                             </div>
-                            <div className="saprator mt-3 text-center">
-                                <span>{login.loginWith}</span>
+                            <div className={styles.saprator}>
+                                <span>{loginTexts.loginWith}</span> 
                             </div>
-                            <div className="row">
-                                <div className="col">
-                                    <div className="d-grid">
-                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted btn-brand">
-                                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{login.google}</span>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div className={styles.socialRow}>
+                                <button type="button" className={styles.btnGoogle}>
+                                    <img src="/assets/images/authentication/google.svg" alt="img" /> <span className={styles.googleText}>{loginTexts.google}</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -61,4 +53,4 @@ const page = () => {
     );
 }
 
-export default page;
+export default LoginPage;
