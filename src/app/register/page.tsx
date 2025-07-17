@@ -1,5 +1,5 @@
 'use client';
-import '@/styles/custom.scss'
+import '@/styles/components/button.scss';
 import register from '@/constant/register';
 // import { useRouter } from 'next/router';
 import { useRouter } from 'next/navigation';

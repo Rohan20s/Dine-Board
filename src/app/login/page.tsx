@@ -1,6 +1,7 @@
 'use client';
 
-import '@/styles/custom.scss'
+import '@/styles/components/button.scss';
+import '@/styles/components/form.scss';
 import login from '@/constant/login';
 import { useRouter } from 'next/navigation';
 
@@ -46,7 +47,7 @@ const page = () => {
                             <div className="row">
                                 <div className="col">
                                     <div className="d-grid">
-                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
+                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted btn-brand">
                                             <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{login.google}</span>
                                         </button>
                                     </div>
