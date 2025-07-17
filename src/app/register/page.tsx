@@ -1,10 +1,19 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/custom.scss'
+'use client';
+import '@/styles/custom.scss'
+import register from '@/constant/register';
+// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const page = () => {
+    const router = useRouter();
+
+    const handleLoginRedirect = () =>{
+        router.push('/login');
+    };
+
     return (
-        <div   className="auth-main bg-light min-vh-100">
-            <div  className="auth-wrapper v3 auth-main container ">
+        <div className="auth-main bg-light min-vh-100">
+            <div className="auth-wrapper v3 auth-main container ">
                 <div className="auth-form">
                     <div className="auth-header py-2">
                         <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
@@ -12,61 +21,52 @@ const page = () => {
                     <div style={{ maxWidth: '500px' }} className="card my-5 auth-wrapper v3 container  mx-auto w-100">
                         <div className="card-body">
                             <div className="d-flex justify-content-between align-items-end mb-4">
-                                <h3 className="mb-0"><b>Sign up</b></h3>
-                                <a href="#" className="link-primary">Already have an account?</a>
+                                <h3 className="mb-0"><b>{register.title}</b></h3>
+                                <a href="#" onClick={handleLoginRedirect} className="link-primary">{register.alreadyHaveAccount}</a>
                             </div>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group mb-3">
-                                        <label className="form-label">First Name*</label>
+                                        <label className="form-label">{register.firstName}</label>
                                         <input type="text" className="form-control" placeholder="First Name" />
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-group mb-3">
-                                        <label className="form-label">Last Name</label>
+                                        <label className="form-label">{register.lastName}</label>
                                         <input type="text" className="form-control" placeholder="Last Name" />
                                     </div>
                                 </div>
                             </div>
                             <div className="form-group mb-3">
-                                <label className="form-label">Company</label>
-                                <input type="text" className="form-control" placeholder="Company" />
+                                <label className="form-label">{register.Orgnazation}</label>
+                                <input type="text" className="form-control" placeholder="Orgnazation" />
                             </div>
                             <div className="form-group mb-3">
-                                <label className="form-label">Email Address*</label>
+                                <label className="form-label">{register.email}</label>
                                 <input type="email" className="form-control" placeholder="Email Address" />
                             </div>
                             <div className="form-group mb-3">
-                                <label className="form-label">Password</label>
+                                <label className="form-label">{register.password}</label>
                                 <input type="password" className="form-control" placeholder="Password" />
                             </div>
-                            <p className="mt-4 text-sm text-muted">By Signing up, you agree to our <a href="#" className="text-primary"> Terms of Service </a> and <a href="#" className="text-primary"> Privacy Policy</a></p>
-                            <div className="d-grid mt-3">
-                                <button type="button" className="btn btn-brand">Create Account</button>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label" htmlFor="flexCheckDefault">
+                                    <p className="">By Signing up, you agree to our <a href="#" className="text-primary"> Terms of Service </a> and <a href="#" className="text-primary"> Privacy Policy</a></p>
+                                </label>
                             </div>
-                            <div className="saprator mt-3">
-                                <span>Sign up with</span>
+                            <div className="d-grid mt-3">
+                                <button type="button" className="btn btn-brand">{register.CreateAccount}</button>
+                            </div>
+                            <div className="saprator mt-3 text-center">
+                                <span>{register.sighUpWith}</span>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col">
                                     <div className="d-grid">
-                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
-                                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block"> Google</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="col-4">
-                                    <div className="d-grid">
-                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
-                                            <img src="/assets/images/authentication/twitter.svg" alt="img" /> <span className="d-none d-sm-inline-block"> Twitter</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="col-4">
-                                    <div className="d-grid">
-                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted">
-                                            <img src="/assets/images/authentication/facebook.svg" alt="img" /> <span className="d-none d-sm-inline-block"> Facebook</span>
+                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted btn-brand">
+                                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{register.google}</span>
                                         </button>
                                     </div>
                                 </div>
