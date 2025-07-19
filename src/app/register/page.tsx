@@ -1,7 +1,6 @@
 'use client';
 import '@/styles/components/button.scss';
-import register from '@/constant/register';
-// import { useRouter } from 'next/router';
+import { registerTexts } from '@/app/register/register.constants';
 import { useRouter } from 'next/navigation';
 
 const page = () => {
@@ -12,8 +11,8 @@ const page = () => {
     };
 
     return (
-        <div className="auth-main bg-light min-vh-100">
-            <div className="auth-wrapper v3 auth-main container ">
+        <div className=" min-vh-100 bg-light ">
+            <div className="auth-wrapper v3  container ">
                 <div className="auth-form">
                     <div className="auth-header py-2">
                         <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
@@ -21,33 +20,33 @@ const page = () => {
                     <div style={{ maxWidth: '500px' }} className="card my-5 auth-wrapper v3 container  mx-auto w-100">
                         <div className="card-body">
                             <div className="d-flex justify-content-between align-items-end mb-4">
-                                <h3 className="mb-0"><b>{register.title}</b></h3>
-                                <a href="#" onClick={handleLoginRedirect} className="link-primary">{register.alreadyHaveAccount}</a>
+                                <h3 className="mb-0"><b>{registerTexts.title}</b></h3>
+                                <a href="#" onClick={handleLoginRedirect} className="link-primary">{registerTexts.alreadyHaveAccount}</a>
                             </div>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group mb-3">
-                                        <label className="form-label">{register.firstName}</label>
+                                        <label className="form-label">{registerTexts.firstName}</label>
                                         <input type="text" className="form-control" placeholder="First Name" />
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-group mb-3">
-                                        <label className="form-label">{register.lastName}</label>
+                                        <label className="form-label">{registerTexts.lastName}</label>
                                         <input type="text" className="form-control" placeholder="Last Name" />
                                     </div>
                                 </div>
                             </div>
                             <div className="form-group mb-3">
-                                <label className="form-label">{register.Orgnazation}</label>
+                                <label className="form-label">{registerTexts.Orgnazation}</label>
                                 <input type="text" className="form-control" placeholder="Orgnazation" />
                             </div>
                             <div className="form-group mb-3">
-                                <label className="form-label">{register.email}</label>
+                                <label className="form-label">{registerTexts.email}</label>
                                 <input type="email" className="form-control" placeholder="Email Address" />
                             </div>
                             <div className="form-group mb-3">
-                                <label className="form-label">{register.password}</label>
+                                <label className="form-label">{registerTexts.password}</label>
                                 <input type="password" className="form-control" placeholder="Password" />
                             </div>
                             <div className="form-check">
@@ -57,16 +56,16 @@ const page = () => {
                                 </label>
                             </div>
                             <div className="d-grid mt-3">
-                                <button type="button" className="btn btn-brand">{register.CreateAccount}</button>
+                                <button type="button" className="btn btn-brand">{registerTexts.CreateAccount}</button>
                             </div>
                             <div className="saprator mt-3 text-center">
-                                <span>{register.sighUpWith}</span>
+                                <span>{registerTexts.sighUpWith}</span>
                             </div>
                             <div className="row">
                                 <div className="col">
                                     <div className="d-grid">
                                         <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted btn-brand">
-                                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{register.google}</span>
+                                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{registerTexts.google}</span>
                                         </button>
                                     </div>
                                 </div>
