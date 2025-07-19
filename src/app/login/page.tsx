@@ -1,6 +1,8 @@
 'use client';
 
-import styles from '../login/login.module.css';
+import '@/styles/components/button.scss';
+import '@/styles/components/form.scss';
+import login from '@/constant/login';
 import { useRouter } from 'next/navigation';
 import { loginTexts } from './login.constants';
 
@@ -40,10 +42,14 @@ const LoginPage = () => {
                             <div className={styles.saprator}>
                                 <span>{loginTexts.loginWith}</span> 
                             </div>
-                            <div className={styles.socialRow}>
-                                <button type="button" className={styles.btnGoogle}>
-                                    <img src="/assets/images/authentication/google.svg" alt="img" /> <span className={styles.googleText}>{loginTexts.google}</span>
-                                </button>
+                            <div className="row">
+                                <div className="col">
+                                    <div className="d-grid">
+                                        <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted btn-brand">
+                                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{login.google}</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

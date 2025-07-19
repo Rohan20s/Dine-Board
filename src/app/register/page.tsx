@@ -1,5 +1,11 @@
 'use client';
+<<<<<<< HEAD
 import styles from '../register/register.module.css';
+=======
+import '@/styles/custom.scss'
+import register from '@/constant/register';
+// import { useRouter } from 'next/router';
+>>>>>>> parent of 49f1ce8 (create and arrange style file structure and create some component)
 import { useRouter } from 'next/navigation';
 import { registerTexts } from './register.constants';
 
