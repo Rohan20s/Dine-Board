@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" data-theme={theme}>
-      <body>
+      <body className="bg-light">
         <button
           style={{ position: 'fixed', top: 10, right: 10, zIndex: 1000, background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer' }}
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

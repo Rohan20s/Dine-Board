@@ -1,7 +1,6 @@
 'use client';
 
-import '@/styles/components/button.scss';
-import '@/styles/components/form.scss';
+import styles from '@/app/login/login.module.scss';
 import { loginTexts } from '@/app/login/login.constants';
 import { useRouter } from 'next/navigation';
 
@@ -20,7 +19,7 @@ const page = () => {
                     <div className="auth-header py-2">
                         <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
                     </div>
-                    <div style={{ maxWidth: '500px' }} className="card my-5 auth-wrapper v3 container  mx-auto w-100">
+                    <div className={`${ styles.maxWidth } card my-5 auth-wrapper v3 container  mx-auto w-100`}>
                         <div className="card-body">
                             <div className="d-flex justify-content-between align-items-end mb-4">
                                 <h3 className="mb-0"><b>{loginTexts.title}</b></h3>

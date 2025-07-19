@@ -1,23 +1,24 @@
 'use client';
 import '@/styles/components/button.scss';
+import styles from '@/app/register/register.module.scss';
 import { registerTexts } from '@/app/register/register.constants';
 import { useRouter } from 'next/navigation';
 
 const page = () => {
     const router = useRouter();
 
-    const handleLoginRedirect = () =>{
+    const handleLoginRedirect = () => {
         router.push('/login');
     };
 
     return (
-        <div className=" min-vh-100 bg-light ">
-            <div className="auth-wrapper v3  container ">
-                <div className="auth-form">
+        <div className="  ">
+            <div className="container min-vh-100">
+                <form action="" className="auth-form">
                     <div className="auth-header py-2">
                         <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
                     </div>
-                    <div style={{ maxWidth: '500px' }} className="card my-5 auth-wrapper v3 container  mx-auto w-100">
+                    <div  className={` ${styles.maxWidth} card my-5 auth-wrapper v3 container  mx-auto w-100`}>
                         <div className="card-body">
                             <div className="d-flex justify-content-between align-items-end mb-4">
                                 <h3 className="mb-0"><b>{registerTexts.title}</b></h3>
@@ -70,24 +71,9 @@ const page = () => {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <div className="auth-footer row">
-                        {/* <!-- <div className=""> --> */}
-                        <div className="col my-1">
-                            <p className="m-0">Copyright © <a href="#">Codedthemes</a></p>
-                        </div>
-                        <div className="col-auto my-1">
-                            <ul className="list-inline footer-link mb-0">
-                                <li className="list-inline-item"><a href="#">Home</a></li>
-                                <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
-                                <li className="list-inline-item"><a href="#">Contact us</a></li>
-                            </ul>
-                        </div>
-                        {/* <!-- </div> --> */}
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     );
