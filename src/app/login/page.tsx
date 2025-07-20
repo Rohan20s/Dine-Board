@@ -14,6 +14,9 @@ const LoginPage = () => {
   const handleLoginRedirect = () => {
     router.push('/register');
   };
+  const handleForgetRedirect = () => {
+    router.push('/login/forgetPassword');
+  };
 
 
   // Validation schema
@@ -38,8 +41,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth-main bg-light min-vh-100">
-      <div className=" container">
+    <div className="bg-light min-vh-100">
+      <div className="container">
 
         <Formik
           initialValues={initialValues}
@@ -53,7 +56,7 @@ const LoginPage = () => {
                 <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
               </div>
               <Form>
-                <div className={`${styles.maxWidth} card my-5 v3 container  mx-auto w-100`}>
+                <div className={`${styles.maxWidth} card my-5 v3 container mx-auto w-100`}>
                   <div className="card-body">
                     <div className="d-flex justify-content-between align-items-end mb-4">
                       <h3 className="mb-0"><b>{loginTexts.title}</b></h3>
@@ -63,6 +66,7 @@ const LoginPage = () => {
                       <label htmlFor="email">{loginTexts.email}</label>
                       <Field
                         type="email"
+                        id="email"
                         name="email"
                         placeholder="Email Address"
                         className={`form-control ${formik.touched.email && formik.errors.email ? 'is-invalid' : ''
@@ -75,6 +79,7 @@ const LoginPage = () => {
                       <label htmlFor="password">{loginTexts.password}</label>
                       <Field
                         type="password"
+                        id="password"
                         name="password"
                         placeholder="Password"
                         className={`form-control ${formik.touched.password && formik.errors.password ? 'is-invalid' : ''
@@ -82,8 +87,8 @@ const LoginPage = () => {
                       />
                       <ErrorMessage name="password" component="div" className="text-danger" />
                     </div>
-                    <div className="d-flex mt-1 justify-content-end">
-                      <h6 className="text-primary f-w-400">{loginTexts.forgotPassword}</h6>
+                    <div className="d-flex mt-1 justify-content-end ">
+                      <a href="#" onClick={handleForgetRedirect} className="text-primary f-w-400 " >{loginTexts.forgotPassword}</a>
                     </div>
                     <div className="d-grid mt-4">
                       <button type="button" className="btn btn-brand">{loginTexts.login}</button>

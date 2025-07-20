@@ -1,6 +1,7 @@
 'use client';
 
 import styles from '@/app/login/login.module.scss';
+import { forgotPasswordTexts } from '@/app/login/forgetPassword/forgetPassword.constants';
 import { useRouter } from 'next/navigation';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -47,16 +48,16 @@ const ForgetPasswordPage = () => {
                 <div className={`${styles.maxWidth} card my-5 v3 container mx-auto w-100`}>
                   <div className="card-body">
                     <div className="d-flex justify-content-between align-items-end mb-4">
-                      <h3 className="mb-0"><b>Forgot Password</b></h3>
-                      <a href="#" onClick={handleLoginRedirect} className="link-primary">Back to Login</a>
+                      <h3 className="mb-0"><b>{forgotPasswordTexts.title}</b></h3>
+                      <a href="#" onClick={handleLoginRedirect} className="link-primary">{forgotPasswordTexts.backToLogin}</a>
                     </div>
 
                     <div className="mb-3">
-                      <label htmlFor="email" className="form-label">Email Address</label>
+                      <label htmlFor="email" className="form-label">{forgotPasswordTexts.emailLabel}</label>
                       <Field
                         type="email"
                         name="email"
-                        placeholder="Enter your registered email"
+                        placeholder={forgotPasswordTexts.emailPlaceholder}
                         className={`form-control ${formik.touched.email && formik.errors.email ? 'is-invalid' : ''}`}
                       />
                       <ErrorMessage name="email" component="div" className="text-danger" />
