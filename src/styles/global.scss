@@ -4,10 +4,10 @@
 // Theme variables
 //@import me ko new scss me hta diya gya hai , but boostrap me hai to problem hota hai uske bdale @use 
 @use "variables";
-
 @use "@/styles/components/form";
 @use "@/styles/components/button";
 
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 

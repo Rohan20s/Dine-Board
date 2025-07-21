@@ -1,6 +1,5 @@
 'use client';
 
-
 import styles from '@/app/login/login.module.scss';
 import { loginTexts } from '@/app/login/login.constants';
 import { useRouter } from 'next/navigation';
@@ -17,7 +16,6 @@ const LoginPage = () => {
   const handleForgetRedirect = () => {
     router.push('/login/forgetPassword');
   };
-
 
   // Validation schema
   const validationSchema = Yup.object({
@@ -41,69 +39,84 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100">
-      <div className="container">
-
+    <div className="bg-gray-100 min-h-screen">
+      <div className="mx-auto px-4">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >
-          {/* Formik gives you props and helpers */}
           {(formik) => (
             <>
               <div className="py-2">
                 <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
               </div>
               <Form>
-                <div className={`${styles.maxWidth} card my-5 v3 container mx-auto w-100`}>
-                  <div className="card-body">
-                    <div className="d-flex justify-content-between align-items-end mb-4">
-                      <h3 className="mb-0"><b>{loginTexts.title}</b></h3>
-                      <a href="#" onClick={handleLoginRedirect} className="link-primary">{loginTexts.notHaveAccount}</a>
+                <div className="max-w-lg mx-auto my-5 w-full bg-white rounded-lg shadow-md">
+                  <div className="p-8">
+                    <div className="flex justify-between items-end mb-4">
+                      <h3 className="mb-0 text-2xl font-bold">{loginTexts.title}</h3>
+                      <a
+                        href="#"
+                        onClick={handleLoginRedirect}
+                        className="text-blue-600 hover:underline text-sm"
+                      >
+                        {loginTexts.notHaveAccount}
+                      </a>
                     </div>
-                    <div className="mb-3">
-                      <label htmlFor="email">{loginTexts.email}</label>
+                    <div className="mb-4">
+                      <label htmlFor="email" className="block mb-1 font-medium">{loginTexts.email}</label>
                       <Field
                         type="email"
                         id="email"
                         name="email"
                         placeholder="Email Address"
-                        className={`form-control ${formik.touched.email && formik.errors.email ? 'is-invalid' : ''
+                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'
                           }`}
                       />
-                      <ErrorMessage name="email" component="div" className="text-danger" />
+                      <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />
                     </div>
 
-                    <div className="mb-3">
-                      <label htmlFor="password">{loginTexts.password}</label>
+                    <div className="mb-4">
+                      <label htmlFor="password" className="block mb-1 font-medium">{loginTexts.password}</label>
                       <Field
                         type="password"
                         id="password"
                         name="password"
                         placeholder="Password"
-                        className={`form-control ${formik.touched.password && formik.errors.password ? 'is-invalid' : ''
+                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'
                           }`}
                       />
-                      <ErrorMessage name="password" component="div" className="text-danger" />
+                      <ErrorMessage name="password" component="div" className="text-red-500 text-xs mt-1" />
                     </div>
-                    <div className="d-flex mt-1 justify-content-end ">
-                      <a href="#" onClick={handleForgetRedirect} className="text-primary f-w-400 " >{loginTexts.forgotPassword}</a>
+                    <div className="flex mt-1 justify-end">
+                      <a
+                        href="#"
+                        onClick={handleForgetRedirect}
+                        className="text-blue-600 hover:underline text-sm font-medium"
+                      >
+                        {loginTexts.forgotPassword}
+                      </a>
                     </div>
-                    <div className="d-grid mt-4">
-                      <button type="button" className="btn btn-brand">{loginTexts.login}</button>
+                    <div className="mt-6">
+                      <button
+                        type="button"
+                        className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 font-semibold transition"
+                      >
+                        {loginTexts.login}
+                      </button>
                     </div>
-                    <div className="mt-3 text-center">
-                      <span>{loginTexts.loginWith}</span>
+                    <div className="mt-4 text-center">
+                      <span className="text-gray-500">{loginTexts.loginWith}</span>
                     </div>
-                    <div className="row">
-                      <div className="col">
-                        <div className="d-grid">
-                          <button type="button" className="btn mt-2 btn-light-primary bg-light text-muted btn-brand">
-                            <img src="/assets/images/authentication/google.svg" alt="img" /> <span className="d-none d-sm-inline-block">{loginTexts.google}</span>
-                          </button>
-                        </div>
-                      </div>
+                    <div className="mt-2">
+                      <button
+                        type="button"
+                        className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 border border-gray-300 mt-2"
+                      >
+                        <img src="/assets/images/authentication/google.svg" alt="img" className="h-5 w-5" />
+                        <span className="hidden sm:inline-block">{loginTexts.google}</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -112,9 +125,8 @@ const LoginPage = () => {
           )}
         </Formik>
       </div>
-    </div >
+    </div>
   );
 }
-
 
 export default LoginPage;
