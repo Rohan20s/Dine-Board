@@ -32,8 +32,8 @@ const ForgetPasswordPage = () => {
   };
 
   return (
-    <div className="auth-main bg-light min-vh-100">
-      <div className="container">
+    <div className="bg-gray-100 min-h-screen">
+      <div className="mx-auto px-4">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -45,26 +45,41 @@ const ForgetPasswordPage = () => {
                 <a href="#"><img src="/assets/images/logo-dark.svg" alt="logo" /></a>
               </div>
               <Form>
-                <div className={`${styles.maxWidth} card my-5 v3 container mx-auto w-100`}>
-                  <div className="card-body">
-                    <div className="d-flex justify-content-between align-items-end mb-4">
-                      <h3 className="mb-0"><b>{forgotPasswordTexts.title}</b></h3>
-                      <a href="#" onClick={handleLoginRedirect} className="link-primary">{forgotPasswordTexts.backToLogin}</a>
+                <div className="max-w-lg mx-auto my-5 w-full bg-white rounded-lg shadow-md">
+                  <div className="p-8">
+                    <div className="flex justify-between items-end mb-4">
+                      <h3 className="mb-0 text-2xl font-bold">{forgotPasswordTexts.title}</h3>
+                      <a
+                        href="#"
+                        onClick={handleLoginRedirect}
+                        className="text-blue-600 hover:underline text-sm"
+                      >
+                        {forgotPasswordTexts.backToLogin}
+                      </a>
                     </div>
 
-                    <div className="mb-3">
-                      <label htmlFor="email" className="form-label">{forgotPasswordTexts.emailLabel}</label>
+                    <div className="mb-4">
+                      <label htmlFor="email" className="block mb-1 font-medium">{forgotPasswordTexts.emailLabel}</label>
                       <Field
                         type="email"
                         name="email"
                         placeholder={forgotPasswordTexts.emailPlaceholder}
-                        className={`form-control ${formik.touched.email && formik.errors.email ? 'is-invalid' : ''}`}
+                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-400 ${
+                          formik.touched.email && formik.errors.email
+                            ? 'border-red-500'
+                            : 'border-gray-300'
+                        }`}
                       />
-                      <ErrorMessage name="email" component="div" className="text-danger" />
+                      <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />
                     </div>
 
-                    <div className="d-grid mt-4">
-                      <button type="submit" className="btn btn-brand">Send Reset Link</button>
+                    <div className="mt-6">
+                      <button
+                        type="submit"
+                        className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-800 font-semibold transition"
+                      >
+                        Send Reset Link
+                      </button>
                     </div>
                   </div>
                 </div>
