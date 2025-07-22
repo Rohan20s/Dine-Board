@@ -1,7 +1,6 @@
 
 "use client";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../styles/global.scss';
 import { ReactNode, useState, useEffect } from 'react';
