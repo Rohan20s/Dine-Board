@@ -12,11 +12,9 @@
     "@tailwindcss/postcss": "^4.1.11",
     "formik": "^2.4.6",
     "next": "15.3.5",
-    "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sass": "^1.89.2",
-    "tailwindcss": "^4.1.11",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -26,9 +24,25 @@
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-next": "15.3.5",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rohan20s/Dine-Board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rohan20s/Dine-Board/issues"
+  },
+  "homepage": "https://github.com/Rohan20s/Dine-Board#readme"
 }

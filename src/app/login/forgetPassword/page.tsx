@@ -33,7 +33,6 @@ const ForgetPasswordPage = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="mx-auto px-4">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -41,7 +40,7 @@ const ForgetPasswordPage = () => {
         >
           {(formik) => (
             <>
-              <div className="py-2">
+              <div className="py-2 flex justify-center">
                 <a href="#"><img src="/assets/images/logo-dark.svg" alt="logo" /></a>
               </div>
               <Form>
@@ -64,7 +63,7 @@ const ForgetPasswordPage = () => {
                         type="email"
                         name="email"
                         placeholder={forgotPasswordTexts.emailPlaceholder}
-                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-400 ${
+                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
                           formik.touched.email && formik.errors.email
                             ? 'border-red-500'
                             : 'border-gray-300'
@@ -87,7 +86,6 @@ const ForgetPasswordPage = () => {
             </>
           )}
         </Formik>
-      </div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('token');
-      if (!token && pathname !== '/login' && pathname !== '/register' && pathname !== '/login/forgetPassword') {
+      if (!token && pathname !== '/login' && pathname !== '/register' && pathname !== '/login/forgetPassword' && pathname !== '/price') {
         router.replace('/login');
       }
     }

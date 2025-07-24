@@ -64,7 +64,7 @@ const LoginPage = () => {
                       </a>
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="email" className="block mb-1 font-medium">{loginTexts.email}</label>
+                      <label htmlFor="email" className="block mb-1 font-medium dark:text-blue-600">{loginTexts.email}</label>
                       <Field
                         type="email"
                         id="email"

@@ -53,12 +53,12 @@ const Page = () => {
               <div className="py-2 flex justify-center">
                 <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
               </div>
-            <Form className="">
+            <Form>
               <div className={`mx-auto w-full max-w-lg bg-white rounded-lg shadow-md my-5 `}>
                 <div className="p-8">
                   <div className="flex justify-between items-end mb-4">
                     <h3 className="mb-0 text-2xl font-bold">{registerTexts.title}</h3>
-                    <a href="#" onClick={handleLoginRedirect} className="text-blue-600 text-sm text-decoration-none mt-0">
+                    <a href="#" onClick={handleLoginRedirect} className="text-blue-600 hover:underline text-sm text-decoration-none mt-0">
                       {registerTexts.alreadyHaveAccount}
                     </a>
                   </div>
