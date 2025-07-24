@@ -1,4 +1,6 @@
+
 "use client";
+
 
 import '../styles/global.scss';
 import { ReactNode, useState, useEffect } from 'react';
@@ -17,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('token');
-      if (!token && pathname !== '/login' && pathname !== '/register') {
+      if (!token && pathname !== '/login' && pathname !== '/register' && pathname !== '/login/forgetPassword' && pathname !== '/price') {
         router.replace('/login');
       }
     }
@@ -25,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" data-theme={theme}>
-      <body>
+      <body className="bg-light">
         <button
           style={{ position: 'fixed', top: 10, right: 10, zIndex: 1000, background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer' }}
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

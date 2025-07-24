@@ -1,7 +1,11 @@
 
 @use "variables";
+@use "@/styles/components/form";
+@use "@/styles/components/button";
 
+@use "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 
 :root {
   --color-bg: #fff;

@@ -1,9 +1,19 @@
-.authMain {
+
+.maxWidth{
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.pointer{
+  cursor: pointer;
+}
+/* .authMain {
   min-height: 100vh;
   background: var(--color-bg);
 }
 .container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -31,7 +41,7 @@
   margin-bottom: 1.5rem;
 }
 .title {
-  font-size: var(--font-size-lg);
+  font-size: 1.5rem;
   color: var(--color-primary);
   font-family: var(--font-family);
 }
@@ -39,13 +49,6 @@
   color: var(--color-primary);
   cursor: pointer;
   text-decoration: underline;
-}
-.row {
-  display: flex;
-  gap: 1rem;
-}
-.colMd6 {
-  flex: 1;
 }
 .formGroup {
   margin-bottom: 1rem;
@@ -60,27 +63,21 @@
 .formControl {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: var(--font-size-base);
+  font-size: 1rem;
   font-family: var(--font-family);
   color: var(--color-text);
   background: var(--color-bg);
 }
-.formCheck {
+.forgotRow {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
 }
-.formCheckInput {
-  margin-right: 0.5rem;
-}
-.formCheckLabel {
-  font-size: 0.95rem;
-}
-.termsText {
-  margin: 0;
-  color: var(--color-text);
+.forgotText {
+  color: var(--color-primary);
+  font-weight: 400;
   font-family: var(--font-family);
 }
 .buttonRow {
@@ -90,17 +87,17 @@
 }
 .btnBrand {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: #fff;
   border: none;
   padding: 0.75rem 2rem;
   border-radius: 6px;
-  font-size: var(--font-size-lg);
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.2s;
   font-family: var(--font-family);
 }
 .btnBrand:hover {
-  background: var(--color-hover);
+  background: #005bb5;
 }
 .saprator {
   text-align: center;
@@ -113,9 +110,9 @@
   justify-content: center;
 }
 .btnGoogle {
-  background: var(--color-surface);
-  color: var(--color-secondary);
-  border: 1px solid var(--color-border);
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
   border-radius: 6px;
   padding: 0.5rem 1.5rem;
   display: flex;
@@ -127,30 +124,4 @@
 .googleText {
   display: inline-block;
   font-family: var(--font-family);
-}
-.authFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  border-top: 1px solid var(--color-divider);
-  padding-top: 1rem;
-}
-.footerCol {
-  flex: 1;
-}
-.footerColAuto {
-  flex: 0 0 auto;
-}
-.footerLinks {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-.footerText {
-  margin: 0;
-  color: var(--color-text);
-  font-family: var(--font-family);
-} 
+}  */
