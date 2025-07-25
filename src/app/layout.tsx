@@ -2,7 +2,7 @@
 "use client";
 
 
-import '../styles/global.scss';
+import '../styles/global.css';
 import { ReactNode, useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -44,8 +44,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
-      <body className={`h-100vh w-100vwbg-background text-text dark:bg-background-dark dark:text-text-dark${theme === 'dark' ? ' dark' : ''}`}>
-        jasnkjdaj
+      <body className={`bg-background text-text dark:bg-background-dark dark:text-text-dark${theme === 'dark' ? ' dark' : ''}`}>
+        {/* Tailwind CSS Dummy Test */}
+        <div className="bg-primary text-white p-4 m-4 rounded shadow-lg dark:bg-primary-dark">
+          Tailwind CSS is working!
+        </div>
+        <button
+          style={{ position: 'fixed', top: 10, right: 10, zIndex: 1000, background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer' }}
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          aria-label="Toggle theme"
+        >
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
+        {children}
       </body>
     </html>
   );
