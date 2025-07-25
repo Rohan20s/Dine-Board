@@ -7,6 +7,6 @@
 /* Hover or focus state */
 .form-control:hover,
 .form-control:focus {
-  border-color: variables.$dark-blue;                   
-  box-shadow: variables.$box-shadow;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 .15rem rgba(100, 82, 179, 0.2); /* Optionally, make this a CSS variable if needed */
 }

@@ -3,28 +3,23 @@
 @use "@/styles/components/form";
 @use "@/styles/components/button";
 
-@use "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-
 :root {
-  --color-bg: #fff;
-  --color-text: #222;
   --color-primary: #0070f3;
+  --color-background: #fff;
+  --color-text: #222;
   --color-secondary: #333;
   --color-border: #ddd;
   --color-hover: #005bb5;
   --color-surface: #f5f5f5;
   --color-divider: #eee;
-  --font-family: 'Inter', sans-serif;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.1rem;
 }
 
-[data-theme='dark'] {
-  --color-bg: #181818;
-  --color-text: #fafafa;
+.dark {
   --color-primary: #1e90ff;
+  --color-background: #181818;
+  --color-text: #fafafa;
   --color-secondary: #fafafa;
   --color-border: #444;
   --color-hover: #1e90ff;
@@ -33,9 +28,7 @@
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-family);
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }

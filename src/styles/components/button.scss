@@ -1,12 +1,12 @@
 @use "../variables.scss";
 
 .btn-brand {
-  background-color: variables.$dark-blue;
-  color: variables.$white;
+  background-color: var(--color-primary);
+  color: var(--color-text);
   transition: background 0.25s ease, transform 0.25s ease;
 
   &:hover {
-    background-color: variables.$dark-blue-hover;
+    background-color: var(--color-hover);
     transform: translateY(-2px);
   }
 }

@@ -11,10 +11,27 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Set data-theme attribute on <html>
-  if (typeof window !== 'undefined') {
-    document.documentElement.setAttribute('data-theme', theme);
-  }
+  // On mount, read theme from localStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark' || storedTheme === 'light') {
+        setTheme(storedTheme);
+      }
+    }
+  }, []);
+
+  // Update localStorage and <body> class on theme change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', theme);
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    }
+  }, [theme]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,16 +43,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   }, [pathname, router]);
 
   return (
-    <html lang="en" data-theme={theme}>
-      <body className="bg-light">
-        <button
-          style={{ position: 'fixed', top: 10, right: 10, zIndex: 1000, background: 'none', border: 'none', fontSize: '1.8rem', cursor: 'pointer' }}
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          aria-label="Toggle theme"
-        >
-          {theme === 'light' ? '🌙' : '☀️'}
-        </button>
-        {children}
+    <html lang="en">
+      <body className={`h-100vh w-100vwbg-background text-text dark:bg-background-dark dark:text-text-dark${theme === 'dark' ? ' dark' : ''}`}>
+        jasnkjdaj
       </body>
     </html>
   );
