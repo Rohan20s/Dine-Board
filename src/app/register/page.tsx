@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 import styles from '@/app/register/register.module.scss';
 import { registerTexts } from '@/app/register/register.constants';
+import { ThemeToggle } from '@/components/theme_toggle';
 
 const RegisterSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -42,7 +43,7 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-neutral-800  text-gray-800 dark:text-gray-200 flex flex-col justify-center  transition-all duration-300">
       <Formik
         initialValues={initialValues}
         validationSchema={RegisterSchema}
@@ -50,11 +51,11 @@ const Page = () => {
       >
         {(formik) => (
           <>
-              <div className="py-2 flex justify-center">
-                <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
-              </div>
+            <div className="py-2 flex justify-center">
+              <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
+            </div>
             <Form>
-              <div className={`mx-auto w-full max-w-lg bg-white rounded-lg shadow-md my-5 `}>
+              <div className={`mx-auto w-full max-w-lg bg-white rounded-lg shadow-md my-5 dark:bg-neutral-900 dark:text-white`}>
                 <div className="p-8">
                   <div className="flex justify-between items-end mb-4">
                     <h3 className="mb-0 text-2xl font-bold">{registerTexts.title}</h3>
@@ -71,9 +72,8 @@ const Page = () => {
                           name="firstName"
                           id="firstName"
                           placeholder="First Name"
-                          className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
-                            formik.touched.firstName && formik.errors.firstName ? 'border-red-500' : 'border-gray-300'
-                          }`}
+                          className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 ${formik.touched.firstName && formik.errors.firstName ? 'border-red-500' : 'border-gray-300'
+                            }`}
                         />
                         <ErrorMessage name="firstName" component="div" className="text-red-500 text-xs mt-1" />
                       </div>
@@ -85,9 +85,8 @@ const Page = () => {
                           name="lastName"
                           id="lastName"
                           placeholder="Last Name"
-                          className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
-                            formik.touched.lastName && formik.errors.lastName ? 'border-red-500' : 'border-gray-300'
-                          }`}
+                          className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 ${formik.touched.lastName && formik.errors.lastName ? 'border-red-500' : 'border-gray-300'
+                            }`}
                         />
                         <ErrorMessage name="lastName" component="div" className="text-red-500 text-xs mt-1" />
                       </div>
@@ -100,9 +99,8 @@ const Page = () => {
                       name="organization"
                       id="organization"
                       placeholder="Organization"
-                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
-                        formik.touched.organization && formik.errors.organization ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 ${formik.touched.organization && formik.errors.organization ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     <ErrorMessage name="organization" component="div" className="text-red-500 text-xs mt-1" />
                   </div>
@@ -114,9 +112,8 @@ const Page = () => {
                       id="email"
                       type="email"
                       placeholder="Email Address"
-                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
-                        formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />
                   </div>
@@ -128,9 +125,8 @@ const Page = () => {
                       id="password"
                       type="password"
                       placeholder="Password"
-                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
-                        formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     <ErrorMessage name="password" component="div" className="text-red-500 text-xs mt-1" />
                   </div>
@@ -142,9 +138,8 @@ const Page = () => {
                       type="password"
                       id="confirmPassword"
                       placeholder="Confirm Password"
-                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${
-                        formik.touched.confirmPassword && formik.errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 ${formik.touched.confirmPassword && formik.errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     />
                     <ErrorMessage name="confirmPassword" component="div" className="text-red-500 text-xs mt-1" />
                   </div>
@@ -170,10 +165,10 @@ const Page = () => {
                   <div >
                     <button
                       type="button"
-                      className="w-full  flex items-center justify-center gap-2 py-2 px-4 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 border border-gray-300"
+                      className="w-full  flex items-center justify-center gap-2 py-2 px-4 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 border border-gray-300 dark:bg-neutral-900 dark:hover:bg-neutral-800"
                     >
                       <img src="/assets/images/authentication/google.svg" alt="img" className="h-5 w-5" />
-                      <span className="hidden sm:inline-block">{registerTexts.google}</span>
+                      <span className="hidden sm:inline-block ">{registerTexts.google}</span>
                     </button>
                   </div>
                 </div>
@@ -182,6 +177,9 @@ const Page = () => {
           </>
         )}
       </Formik>
+      <div className="flex justify-center mt-4">
+        <ThemeToggle />
+      </div>
     </div>
   );
 };

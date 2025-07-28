@@ -8,6 +8,6 @@ export const registerTexts = {
   password: 'Password',
   confirmPassword: 'Confirm Password',
   CreateAccount: 'Create Account',
-  sighUpWith: 'SighUp with',
+  sighUpWith: 'sighUp with',
   google: 'Google',
 } as const;

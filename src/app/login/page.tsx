@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { ThemeToggle } from '@/components/theme_toggle';
 
 const LoginPage = () => {
 
@@ -39,7 +40,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen dark:bg-neutral-800  text-gray-800 dark:text-gray-200 flex flex-col transition-all duration-300" >
+      <div className=''>
+
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -47,11 +50,11 @@ const LoginPage = () => {
         >
           {(formik) => (
             <>
-              <div className="py-2 flex justify-center">
+              <div className="py-2 flex justify-center ">
                 <a href="#"><img src="/assets/images/logo-dark.svg" alt="img" /></a>
               </div>
               <Form>
-                <div className="max-w-md mx-auto  w-full my-5 bg-white rounded shadow-md">
+                <div className="max-w-md mx-auto w-full my-5 bg-white rounded-lg shadow-md dark:bg-neutral-900 dark:text-white ">
                   <div className="p-8">
                     <div className="flex justify-between items-end mb-4">
                       <h3 className="mb-0 text-2xl font-bold">{loginTexts.title}</h3>
@@ -64,13 +67,13 @@ const LoginPage = () => {
                       </a>
                     </div>
                     <div className="mb-4">
-                      <label htmlFor="email" className="block mb-1 font-medium dark:text-blue-600">{loginTexts.email}</label>
+                      <label htmlFor="email" className="block mb-1 font-medium ">{loginTexts.email}</label>
                       <Field
                         type="email"
                         id="email"
                         name="email"
                         placeholder="Email Address"
-                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 dark:bg-neutral-900 dark:hover:bg-neutral-800  ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'}`}
                       />
                       <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />
                     </div>
@@ -82,7 +85,7 @@ const LoginPage = () => {
                         id="password"
                         name="password"
                         placeholder="Password"
-                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100 ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'}`}
+                        className={`block w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-100  dark:bg-neutral-900 dark:hover:bg-neutral-800  ${formik.touched.password && formik.errors.password ? 'border-red-500' : 'border-gray-300'}`}
                       />
                       <ErrorMessage name="password" component="div" className="text-red-500 text-xs mt-1" />
                     </div>
@@ -90,14 +93,14 @@ const LoginPage = () => {
                       <p
 
                         onClick={handleForgetRedirect}
-                        className="text-gray-600 hover:underline text-lg font-medium text-decoration-none cursor-pointer mb-0" >
+                        className="text-gray-600 hover:underline text-lg font-medium text-decoration-none cursor-pointer mb-0 dark:text-white" >
                         {loginTexts.forgotPassword}
                       </p>
                     </div>
                     <div className="mt-6">
                       <button
                         type="button"
-                        className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-800 font-semibold transition"
+                        className="w-full py-2 px-4 bg-blue-600 text-white hover:bg-blue-700 font-semibold transition rounded-lg"
                       >
                         {loginTexts.login}
                       </button>
@@ -108,7 +111,7 @@ const LoginPage = () => {
                     <div>
                       <button
                         type="button"
-                        className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 border border-gray-300"
+                        className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 border border-gray-300 dark:bg-neutral-900  dark:hover:bg-neutral-800 transition"
                       >
                         <img src="/assets/images/authentication/google.svg" alt="img" className="h-5 w-5" />
                         <span className="hidden sm:inline-block">{loginTexts.google}</span>
@@ -120,6 +123,10 @@ const LoginPage = () => {
             </>
           )}
         </Formik>
+      </div>
+      <div className='flex justify-center items-center mt-4'>
+      <ThemeToggle />
+      </div>
     </div>
   );
 }
