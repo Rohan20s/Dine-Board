@@ -1,21 +1,22 @@
 import './globals.css';
+import { ThemeProvider } from '@/providers/theme-provider';
+import { LanguageProvider } from '@/providers/language-provider';
 
-import { ThemeProvider } from 'next-themes';
-import PrelineScriptWrapper from '../components/Preline/PrelineScriptWrapper';
 export const metadata = {
-  title: 'Dark Mode Test',
-  description: 'Next.js + Tailwind',
+  title: 'Dine Board',
+  description: 'Next.js App',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html  lang="en" suppressHydrationWarning >
-      <body>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      {children}
-      </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-background text-foreground relative">
+        <LanguageProvider>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
-      <PrelineScriptWrapper />
     </html>
   );
 }

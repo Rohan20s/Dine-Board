@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome back",
+  "subtitle": "Login to your Dine Board account",
+  "email": "Email",
+  "password": "Password",
+  "forgotPassword": "Forgot your password?",
+  "signIn": "Sign in",
+  "orContinue": "Or continue with",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign up",
+  "terms": "By clicking continue, you agree to our Terms of Service and Privacy Policy."
+}
